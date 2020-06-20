@@ -1,4 +1,4 @@
-import Mongoose from '../Database';
+const  Mongoose = require('../Database');
 
 const ProductSchema = new Mongoose.Schema({
   cod: Number,
@@ -10,4 +10,4 @@ const ProductSchema = new Mongoose.Schema({
   ammount: Number,
 });
 
-export default Mongoose.model('Product', ProductSchema, 'Product');
+module.exports =  Mongoose.model('Product', ProductSchema, 'Product');

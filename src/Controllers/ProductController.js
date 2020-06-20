@@ -1,5 +1,4 @@
-import * as Yup from 'yup';
-import Product from '../Models/Product';
+const Product = require('../Models/Product');
 
 class ProductController {
 /**
@@ -32,16 +31,6 @@ class ProductController {
    */
   async store(req, res) {
     try {
-      /* const schema = Yup.object().shape({
-        name: Yup.string().required(),
-        price: Yup.number().required(),
-        category: Yup.string().required(),
-      });
-
-      if (!(await schema.isValid(req.body))) {
-        return res.status(400).json({ error: 'Erro na validação dos dados.' });
-      } */
-
       const product = await Product.create(req.body);
       return res.send({ product });
     } catch (err) {
@@ -77,4 +66,4 @@ class ProductController {
   }
 }
 
-export default new ProductController();
+ module.exports  = new ProductController();

@@ -1,4 +1,4 @@
-import Mongoose from 'mongoose';
+const  Mongoose =  require('mongoose');
 
 let stringConnection;
 process.env.NODE_ENV  === 'PROD' ?
@@ -13,8 +13,4 @@ Mongoose.connect(stringConnection, {
   useCreateIndex: true,
 });
 
-
-
-
-
-export default Mongoose;
+module.exports =  Mongoose;
